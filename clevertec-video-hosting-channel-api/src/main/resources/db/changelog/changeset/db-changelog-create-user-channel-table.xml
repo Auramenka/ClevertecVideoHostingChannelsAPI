@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-user-channel-table" author="Anna">
+        <createTable tableName="user_channel">
+            <column name="user_id" type="bigint">
+                <constraints foreignKeyName="user_id_fk" references="users(id)"/>
+            </column>
+            <column name="channel_id" type="bigint">
+                <constraints foreignKeyName="channel_id_fk" references="channels(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
